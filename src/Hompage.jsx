@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Logo from "./img/logo.png";
 import FooterLogo from "./img/footer-logo.png";
 import Image1 from "./img/image1.png";
@@ -9,6 +9,8 @@ import Quality from "./img/quality.jpg";
 import About from "./img/about.jpg";
 
 const Hompage = () => {
+  const [className, setClassName] = useState("top");
+
   const scrollToRef = ref =>
     window.scrollTo({
       top: ref.current.offsetTop - 135,
@@ -30,6 +32,21 @@ const Hompage = () => {
   const myRef = useRef(null);
   const AboutUS = useRef(null);
   const Contact = useRef(null);
+
+  window.addEventListener("scroll", function() {
+    let scrollpos = window.scrollY;
+
+    if (scrollpos > 100) {
+      setClassName("bottom");
+      this.console.log("bottom");
+      //changeClass(1);
+    }
+
+    if (scrollpos < 100) {
+      setClassName("top");
+      this.console.log("top");
+    }
+  });
 
   return (
     <div>
