@@ -1,9 +1,9 @@
 .banner {
-    min-height: 750px;
-    background: url("../img/world-map.png") no-repeat center center;
-    background-size: contain;
+    min-height: 840px;
+    background: url("../../../img/world-map.png") no-repeat center 90px;
     display: flex;
     align-items: center;
+    padding-top: 90px;
 
     .content {
         width: 840px;
@@ -79,7 +79,7 @@
 
 .about-company {
     padding: 180px 0;
-    background: url("../img/zenon-bg.png") no-repeat right top;
+    background: url("../../../img/zenon-bg.png") no-repeat right top;
     background-size: 80%;
 }
 
@@ -141,6 +141,8 @@
 .partners-logos {
     display: flex;
     justify-content: center;
+
+
 
     img {
         margin: 0 25px;

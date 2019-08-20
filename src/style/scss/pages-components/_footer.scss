@@ -10,6 +10,17 @@
             padding-right: 100px;
         }
     }
+
+    ul {
+        li {
+            a {
+                transition: all .3s;
+                &:hover {
+                    color: darken($color-primary, 50%);
+                }
+            }
+        }
+    }
 }
 
 .bottom-footer {

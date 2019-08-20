@@ -1,5 +1,5 @@
 import React from 'react';
-import '../src/style/main.css'
+import '../src/style/scss/main.scss'
 import Hompage from './Hompage';
 
 

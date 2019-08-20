@@ -9,7 +9,7 @@ import Quality from "./img/quality.jpg";
 import About from "./img/about.jpg";
 
 const Hompage = () => {
-  const [className, setClassName] = useState("top");
+  const [className, setClassName] = useState("");
 
   const scrollToRef = ref =>
     window.scrollTo({
@@ -37,27 +37,17 @@ const Hompage = () => {
     let scrollpos = window.scrollY;
 
     if (scrollpos > 100) {
-      setClassName("bottom");
-      this.console.log("bottom");
-      //changeClass(1);
+      setClassName("sticky");
     }
 
     if (scrollpos < 100) {
-      setClassName("top");
-      this.console.log("top");
+      setClassName("");
     }
   });
 
   return (
     <div>
-      <header
-        style={{
-          position: "sticky",
-          top: 0,
-          backgroundColor: "white",
-          zIndex: 10
-        }}
-      >
+      <header className={className}>
         <div className="container">
           <div className="logo">
             <a href="#">
@@ -66,13 +56,13 @@ const Hompage = () => {
           </div>
           <nav className="header-menu">
             <ul>
-              <li style={{ cursor: "pointer" }}>
+              <li className="active">
                 <a onClick={() => scrollToRef(myRef)}>услуги</a>
               </li>
-              <li style={{ cursor: "pointer" }}>
+              <li>
                 <a onClick={() => scrollToRef1(AboutUS)}>О компании</a>
               </li>
-              <li style={{ cursor: "pointer" }}>
+              <li>
                 <a onClick={() => scrollToRef2(Contact)}>Контакты</a>
               </li>
             </ul>
@@ -174,8 +164,7 @@ const Hompage = () => {
               <button className="btn outline btn-sm">далее</button>
             </div>
             <div
-              className="section-img"
-              //       style="background-image: url('assets/img/quality.jpg');"
+              className="section-img" style={{ backgroundImage: `url(${Quality})` }}
             />
           </div>
         </div>
@@ -184,7 +173,7 @@ const Hompage = () => {
       <section className="partners py-80">
         <div className="container">
           <h2 className="text-center uppercase color-text pb-30">Партнеры</h2>
-          <p>
+          <p className='text-center'>
             Компания «ЗенонСтройИнвест» уделяет особое внимание контролю
             качества выпускаемой продукции, имеем современную систему
             менеджмента качества, постоянно внедряем
@@ -203,7 +192,7 @@ const Hompage = () => {
       <section className="contacts" ref={Contact}>
         <div className="contact-title">
           <h2 className="text-center uppercase color-text pb-30">Контакты</h2>
-          <p>
+          <p className="text-center">
             Компания «ЗенонСтройИнвест» уделяет особое внимание контролю
             качества выпускаемой продукции, имеем современную систему
             менеджмента качества, постоянно внедряем
