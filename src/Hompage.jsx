@@ -67,9 +67,9 @@ const Hompage = () => {
   });
 
   const bannerView = useOnScreen(banner, "-90px");
-  const serviceView = useOnScreen(services, "-0px 0px");
-  const aboutView = useOnScreen(aboutus, "-0px 0px");
-  const contac = useOnScreen(contacts, "0px");
+  const serviceView = useOnScreen(services, "0px");
+  const aboutView = useOnScreen(aboutus, "0px");
+  const contac = useOnScreen(contacts, "0px", 0.8);
 
   console.log(serviceView);
 
