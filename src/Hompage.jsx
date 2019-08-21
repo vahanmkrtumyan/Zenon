@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import useOnScreen from "./useOnScreen";
 import Logo from "./img/logo.png";
 import FooterLogo from "./img/footer-logo.png";
 import Image1 from "./img/image1.png";
@@ -13,6 +14,12 @@ const Hompage = () => {
   const [service, setService] = useState("");
   const [about, setAbout] = useState("");
   const [contact, setContact] = useState("");
+  const [node, setNode] = useState({});
+
+  const banner = useRef();
+  const services = useRef();
+  const aboutus = useRef();
+  const contacts = useRef();
 
   const scrollToRef = pos =>
     document.getElementById(pos).scrollIntoView({ behavior: "smooth" });
@@ -38,6 +45,16 @@ const Hompage = () => {
   }
 
   window.addEventListener("scroll", function() {
+    // if (bannerView) {
+    //   setClass("service");
+    // }
+    // if (serviceView) {
+    //   setClass("service");
+    // }
+    // if (contacts) {
+    //   setClass("contact");
+    // }
+
     let scrollpos = window.scrollY;
 
     if (scrollpos > 100) {
@@ -48,6 +65,39 @@ const Hompage = () => {
       setClassName("");
     }
   });
+
+  const bannerView = useOnScreen(banner, "-90px");
+  const serviceView = useOnScreen(services, "-0px 0px");
+  const aboutView = useOnScreen(aboutus, "-0px 0px");
+  const contac = useOnScreen(contacts, "0px");
+
+  console.log(serviceView);
+
+  if (aboutView) {
+    if (!about) {
+      setClass("about");
+    }
+  }
+
+  if (serviceView) {
+    console.log(serviceView);
+    if (!service) {
+      setClass("service");
+    }
+  }
+
+  if (contac) {
+    if (!contact) {
+      setClass("contact");
+    }
+  }
+
+  if (bannerView) {
+    console.log(bannerView);
+    if (service) {
+      setClass("1");
+    }
+  }
 
   return (
     <div>
@@ -73,7 +123,7 @@ const Hompage = () => {
           </nav>
         </div>
       </header>
-      <section className="banner" id="top">
+      <section className="banner" id="top" ref={banner}>
         <div className="content">
           <h3 className="color-secondary">ПОЛНЫЙ СПЕКТР УСЛУГ ПО</h3>
           <h1>ИМПОРТУ И ЭКСПОРТУ</h1>
@@ -85,7 +135,7 @@ const Hompage = () => {
         </div>
       </section>
       <section />
-      <section className="services">
+      <section className="services" ref={services}>
         <button className="btn with-img btn-lg primary">
           услуги <img src="assets/img/arrow-right.svg" alt="" />
         </button>
@@ -121,7 +171,7 @@ const Hompage = () => {
         </div>
       </section>
 
-      <section className="about-company" id="about">
+      <section className="about-company" id="about" ref={aboutus}>
         <div className="container">
           <h2 className="uppercase color-text">О компании</h2>
           <div className="text-with-img img-right">
@@ -196,7 +246,7 @@ const Hompage = () => {
         </div>
       </section>
 
-      <section className="contacts">
+      <section className="contacts" ref={contacts}>
         <div className="contact-title">
           <h2 className="text-center uppercase color-text pb-30">Контакты</h2>
           <p className="text-center">
