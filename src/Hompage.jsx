@@ -58,11 +58,15 @@ const Hompage = () => {
     let scrollpos = window.scrollY;
 
     if (scrollpos > 100) {
-      setClassName("sticky");
+      if (!className) {
+        setClassName("sticky");
+      }
     }
 
     if (scrollpos < 100) {
-      setClassName("");
+      if (className) {
+        setClassName("");
+      }
     }
   });
 
