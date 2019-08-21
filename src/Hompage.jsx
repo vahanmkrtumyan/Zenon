@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import Logo from "./img/logo.png";
 import FooterLogo from "./img/footer-logo.png";
 import Image1 from "./img/image1.png";
@@ -10,28 +10,32 @@ import About from "./img/about.jpg";
 
 const Hompage = () => {
   const [className, setClassName] = useState("");
+  const [service, setService] = useState("");
+  const [about, setAbout] = useState("");
+  const [contact, setContact] = useState("");
 
-  const scrollToRef = ref =>
-    window.scrollTo({
-      top: ref.current.offsetTop - 135,
-      behavior: "smooth"
-    });
+  const scrollToRef = pos =>
+    document.getElementById(pos).scrollIntoView({ behavior: "smooth" });
 
-  const scrollToRef1 = ref =>
-    window.scrollTo({
-      top: ref.current.offsetTop,
-      behavior: "smooth"
-    });
-
-  const scrollToRef2 = ref =>
-    window.scrollTo({
-      top: ref.current.offsetTop - 110,
-      behavior: "smooth"
-    });
-
-  const myRef = useRef(null);
-  const AboutUS = useRef(null);
-  const Contact = useRef(null);
+  function setClass(clas) {
+    if (clas === "service") {
+      setService("active");
+      setAbout("");
+      setContact("");
+    } else if (clas === "about") {
+      setService("");
+      setAbout("active");
+      setContact("");
+    } else if (clas === "contact") {
+      setService("");
+      setAbout("");
+      setContact("active");
+    } else {
+      setService("");
+      setAbout("");
+      setContact("");
+    }
+  }
 
   window.addEventListener("scroll", function() {
     let scrollpos = window.scrollY;
@@ -50,26 +54,26 @@ const Hompage = () => {
       <header className={className}>
         <div className="container">
           <div className="logo">
-            <a href="#">
-              <img src={Logo} alt="" />
+            <a onClick={() => scrollToRef("top")}>
+              <img src={Logo} alt="" onClick={() => setClass("")} />
             </a>
           </div>
           <nav className="header-menu">
             <ul>
-              <li className="active">
-                <a onClick={() => scrollToRef(myRef)}>услуги</a>
+              <li className={service} onClick={() => setClass("service")}>
+                <a onClick={() => scrollToRef("serv")}>услуги</a>
               </li>
-              <li>
-                <a onClick={() => scrollToRef1(AboutUS)}>О компании</a>
+              <li className={about} onClick={() => setClass("about")}>
+                <a onClick={() => scrollToRef("about")}>О компании</a>
               </li>
-              <li>
-                <a onClick={() => scrollToRef2(Contact)}>Контакты</a>
+              <li className={contact} onClick={() => setClass("contact")}>
+                <a onClick={() => scrollToRef("contact")}>Контакты</a>
               </li>
             </ul>
           </nav>
         </div>
       </header>
-      <section className="banner">
+      <section className="banner" id="top">
         <div className="content">
           <h3 className="color-secondary">ПОЛНЫЙ СПЕКТР УСЛУГ ПО</h3>
           <h1>ИМПОРТУ И ЭКСПОРТУ</h1>
@@ -77,9 +81,11 @@ const Hompage = () => {
             Один из лидеров рынка ЕАЭС по сорсингу и поставке огромного спектра
             товаров
           </p>
+          <p id="serv" />
         </div>
       </section>
-      <section className="services" ref={myRef}>
+      <section />
+      <section className="services">
         <button className="btn with-img btn-lg primary">
           услуги <img src="assets/img/arrow-right.svg" alt="" />
         </button>
@@ -115,7 +121,7 @@ const Hompage = () => {
         </div>
       </section>
 
-      <section className="about-company" ref={AboutUS}>
+      <section className="about-company" id="about">
         <div className="container">
           <h2 className="uppercase color-text">О компании</h2>
           <div className="text-with-img img-right">
@@ -164,7 +170,8 @@ const Hompage = () => {
               <button className="btn outline btn-sm">далее</button>
             </div>
             <div
-              className="section-img" style={{ backgroundImage: `url(${Quality})` }}
+              className="section-img"
+              style={{ backgroundImage: `url(${Quality})` }}
             />
           </div>
         </div>
@@ -173,7 +180,7 @@ const Hompage = () => {
       <section className="partners py-80">
         <div className="container">
           <h2 className="text-center uppercase color-text pb-30">Партнеры</h2>
-          <p className='text-center'>
+          <p className="text-center">
             Компания «ЗенонСтройИнвест» уделяет особое внимание контролю
             качества выпускаемой продукции, имеем современную систему
             менеджмента качества, постоянно внедряем
@@ -184,12 +191,12 @@ const Hompage = () => {
             <img src="assets/img/logo3.png" alt="" />
             <img src="assets/img/logo4.png" alt="" />
             <img src="assets/img/logo5.png" alt="" />
-            <img src="assets/img/logo6.png" alt="" />
+            <img src="assets/img/logo6.png" alt="" id="contact" />
           </div>
         </div>
       </section>
 
-      <section className="contacts" ref={Contact}>
+      <section className="contacts">
         <div className="contact-title">
           <h2 className="text-center uppercase color-text pb-30">Контакты</h2>
           <p className="text-center">
