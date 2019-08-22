@@ -8,6 +8,16 @@ import Image3 from "./img/image3.png";
 import Image4 from "./img/image4.png";
 import Quality from "./img/quality.jpg";
 import About from "./img/about.jpg";
+import Arrow from "./img/arrow-right.svg";
+import Partner1 from "./img/partner-logo1.png";
+import Partner2 from "./img/logo2.png";
+import Partner3 from "./img/logo3.png";
+import Partner4 from "./img/logo4.png";
+import Partner5 from "./img/logo5.png";
+import Partner6 from "./img/logo6.png";
+import Phone from "./img/phone-call.png";
+import Location from "./img/location.png";
+import Mail from "./img/mail.png";
 
 const Hompage = () => {
   const [className, setClassName] = useState("");
@@ -47,6 +57,22 @@ const Hompage = () => {
     }
   }
 
+  useEffect(() => {
+    try {
+      // trying to use new API - https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo
+      window.scroll({
+        top: 0,
+        left: 0
+      });
+    } catch (error) {
+      // just a fallback for older browsers
+      window.scrollTo(0, 0);
+    }
+    setTimeout(function() {
+      setClass("1");
+    }, 0);
+  }, []);
+
   useLayoutEffect(() => {
     setBannerDimensions(banner.current.getBoundingClientRect());
   }, [banner.current]);
@@ -64,6 +90,7 @@ const Hompage = () => {
   }, [contacts.current]);
 
   window.addEventListener("scroll", function() {
+
     let scrollpos = window.scrollY;
 
     if (scrollpos > 100) {
@@ -78,29 +105,32 @@ const Hompage = () => {
       }
     }
 
-    if (scrollpos < bannerDimensions.bottom - 450) {
+    if (scrollpos < bannerDimensions.top + 100) {
       if (service) {
         setClass("");
       }
     }
 
     if (
-      scrollpos > bannerDimensions.bottom - 450 &&
-      scrollpos < serviceDimensions.bottom
+      scrollpos > serviceDimensions.top - 50 &&
+      scrollpos < serviceDimensions.bottom - 10
     ) {
       if (!service) {
         setClass("service");
       }
     }
 
-    if (scrollpos > aboutDimensions.top && scrollpos < aboutDimensions.bottom) {
+    if (
+      scrollpos > aboutDimensions.top + 100 &&
+      scrollpos < aboutDimensions.bottom
+    ) {
       if (!about) {
         setClass("about");
       }
     }
 
     if (
-      scrollpos > contactDimensions.top &&
+      scrollpos > contactDimensions.top - 100 &&
       scrollpos < contactDimensions.bottom
     ) {
       if (!contact) {
@@ -154,7 +184,7 @@ const Hompage = () => {
       <section />
       <section className="services" ref={services}>
         <button className="btn with-img btn-lg primary">
-          услуги <img src="assets/img/arrow-right.svg" alt="" />
+          услуги <img src={Arrow} alt="" />
         </button>
         <div className="container">
           <a
@@ -247,18 +277,18 @@ const Hompage = () => {
       <section className="partners py-80">
         <div className="container">
           <h2 className="text-center uppercase color-text pb-30">Партнеры</h2>
-          <p className="text-center">
+          {/* <p className="text-center">
             Компания «ЗенонСтройИнвест» уделяет особое внимание контролю
             качества выпускаемой продукции, имеем современную систему
             менеджмента качества, постоянно внедряем
-          </p>
+          </p> */}
           <div className="partners-logos pt-50">
-            <img src="assets/img/partner-logo1.png" alt="" />
-            <img src="assets/img/logo2.png" alt="" />
-            <img src="assets/img/logo3.png" alt="" />
-            <img src="assets/img/logo4.png" alt="" />
-            <img src="assets/img/logo5.png" alt="" />
-            <img src="assets/img/logo6.png" alt="" id="contact" />
+            <img src={Partner1} alt="" />
+            <img src={Partner2} alt="" />
+            <img src={Partner3} alt="" />
+            <img src={Partner4} alt="" />
+            <img src={Partner5} alt="" />
+            <img src={Partner6} alt="" id="contact" />
           </div>
         </div>
       </section>
@@ -266,25 +296,23 @@ const Hompage = () => {
       <section className="contacts" ref={contacts}>
         <div className="contact-title">
           <h2 className="text-center uppercase color-text pb-30">Контакты</h2>
-          <p className="text-center">
-            Компания «ЗенонСтройИнвест» уделяет особое внимание контролю
-            качества выпускаемой продукции, имеем современную систему
-            менеджмента качества, постоянно внедряем
-          </p>
+          <h3 className="text-center">
+            Свяжитесь с нами, чтобы обсудить сотрудничество
+          </h3>
         </div>
 
         <div className="contact-social">
           <ul>
             <li>
-              <img src="assets/img/phone-call.png" alt="" />
+              <img src={Phone} alt="" />
               <p>+374 11441014</p>
             </li>
             <li>
-              <img src="assets/img/location.png" alt="" />
+              <img src={Location} alt="" />
               <p>г. Ереван В. Вагаршян 12а</p>
             </li>
             <li>
-              <img src="assets/img/mail.png" alt="" />
+              <img src={Mail} alt="" />
               <p>info@zenonstroyinvest.am</p>
             </li>
           </ul>
@@ -292,7 +320,7 @@ const Hompage = () => {
         <div className="map" />
         <div className="contact-form">
           <p className="color-white text-center pb-30">
-            Компания «ЗенонСтройИнвест» уделяет особое внимание контролю
+            МЫ ОТВЕТИМ ВАМ В КРАТЧАЙШИЕ СРОКИ
           </p>
           <form action="">
             <div className="form-inputs pb-25">
@@ -326,7 +354,7 @@ const Hompage = () => {
                     <a href="#">О компании</a>
                   </li>
                   <li>
-                    <a href="#">проекты</a>
+                    <a href="#">Проекты</a>
                   </li>
                   <li>
                     <a href="#">Партнеры</a>
@@ -338,7 +366,7 @@ const Hompage = () => {
                     <a href="#">Контакты</a>
                   </li>
                   <li>
-                    <a href="#">In English</a>
+                    <a href="#">English</a>
                   </li>
                 </ul>
               </div>
@@ -346,15 +374,18 @@ const Hompage = () => {
                 <h5>Услуги</h5>
                 <ul>
                   <li>
+                    <a href="#">Проектно-конструкторские работы</a>
+                  </li>
+                  <li>
+                    <a href="#">Изготовление оборудования по чертежам</a>
+                  </li>
+                  <li>
                     <a href="#">
                       Поставка готового технологического оборудования
                     </a>
                   </li>
                   <li>
-                    <a href="#">Другие услуг</a>
-                  </li>
-                  <li>
-                    <a href="#">Изготовление оборудования по чертежам</a>
+                    <a href="#">Другие услуги</a>
                   </li>
                 </ul>
               </div>
