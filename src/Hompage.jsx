@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
-import useOnScreen from "./useOnScreen";
+import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
+//import useOnScreen from "./useOnScreen";
 import Logo from "./img/logo.png";
 import FooterLogo from "./img/footer-logo.png";
 import Image1 from "./img/image1.png";
@@ -14,7 +14,10 @@ const Hompage = () => {
   const [service, setService] = useState("");
   const [about, setAbout] = useState("");
   const [contact, setContact] = useState("");
-  const [node, setNode] = useState({});
+  const [serviceDimensions, setServiceDimensions] = useState({});
+  const [bannerDimensions, setBannerDimensions] = useState({});
+  const [aboutDimensions, setAboutDimensions] = useState({});
+  const [contactDimensions, setContactDimensions] = useState({});
 
   const banner = useRef();
   const services = useRef();
@@ -44,17 +47,23 @@ const Hompage = () => {
     }
   }
 
-  window.addEventListener("scroll", function() {
-    // if (bannerView) {
-    //   setClass("service");
-    // }
-    // if (serviceView) {
-    //   setClass("service");
-    // }
-    // if (contacts) {
-    //   setClass("contact");
-    // }
+  useLayoutEffect(() => {
+    setBannerDimensions(banner.current.getBoundingClientRect());
+  }, [banner.current]);
 
+  useLayoutEffect(() => {
+    setServiceDimensions(services.current.getBoundingClientRect());
+  }, [services.current]);
+
+  useLayoutEffect(() => {
+    setAboutDimensions(aboutus.current.getBoundingClientRect());
+  }, [aboutus.current]);
+
+  useLayoutEffect(() => {
+    setContactDimensions(contacts.current.getBoundingClientRect());
+  }, [contacts.current]);
+
+  window.addEventListener("scroll", function() {
     let scrollpos = window.scrollY;
 
     if (scrollpos > 100) {
@@ -68,40 +77,44 @@ const Hompage = () => {
         setClassName("");
       }
     }
+
+    if (scrollpos < bannerDimensions.bottom - 450) {
+      if (service) {
+        setClass("");
+      }
+    }
+
+    if (
+      scrollpos > bannerDimensions.bottom - 450 &&
+      scrollpos < serviceDimensions.bottom
+    ) {
+      if (!service) {
+        setClass("service");
+      }
+    }
+
+    if (scrollpos > aboutDimensions.top && scrollpos < aboutDimensions.bottom) {
+      if (!about) {
+        setClass("about");
+      }
+    }
+
+    if (
+      scrollpos > contactDimensions.top &&
+      scrollpos < contactDimensions.bottom
+    ) {
+      if (!contact) {
+        setClass("contact");
+      }
+    }
   });
 
-  const bannerView = useOnScreen(banner, "-90px");
-  const serviceView = useOnScreen(services, "0px");
-  const aboutView = useOnScreen(aboutus, "0px");
-  const contac = useOnScreen(contacts, "0px", 0.8);
+  // const bannerView = useOnScreen(banner, "-90px");
+  // const serviceView = useOnScreen(services, "0px");
+  // const aboutView = useOnScreen(aboutus, "0px");
+  // const contac = useOnScreen(contacts, "0px", 0.8);
 
-  console.log(serviceView);
-
-  if (aboutView) {
-    if (!about) {
-      setClass("about");
-    }
-  }
-
-  if (serviceView) {
-    console.log(serviceView);
-    if (!service) {
-      setClass("service");
-    }
-  }
-
-  if (contac) {
-    if (!contact) {
-      setClass("contact");
-    }
-  }
-
-  if (bannerView) {
-    console.log(bannerView);
-    if (service) {
-      setClass("1");
-    }
-  }
+  // console.log(serviceView);
 
   return (
     <div>
