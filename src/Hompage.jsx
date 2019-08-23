@@ -120,7 +120,7 @@ const Hompage = () => {
     }
 
     if (
-      scrollpos > aboutDimensions.top + 150 &&
+      scrollpos > aboutDimensions.top - 50 &&
       scrollpos < aboutDimensions.bottom
     ) {
       if (!about) {
@@ -129,7 +129,7 @@ const Hompage = () => {
     }
 
     if (
-      scrollpos > contactDimensions.top - 150 &&
+      scrollpos > contactDimensions.top - 200 &&
       scrollpos < contactDimensions.bottom
     ) {
       if (!contact) {
@@ -140,18 +140,16 @@ const Hompage = () => {
 
   const scrollToRef = pos => {
     window.removeEventListener("scroll", listener, true);
-    document.getElementById(pos).scrollIntoView({ behavior: "smooth" });
     setTimeout(function() {
-      window.removeEventListener("scroll", listener, true);
-    }, 1000);
+      window.addEventListener("scroll", listener, true);
+    }, 2000);
+    document.getElementById(pos).scrollIntoView({ behavior: "smooth" });
   };
 
   // const bannerView = useOnScreen(banner, "-90px");
   // const serviceView = useOnScreen(services, "0px");
   // const aboutView = useOnScreen(aboutus, "0px");
   // const contac = useOnScreen(contacts, "0px", 0.8);
-
-  // console.log(serviceView);
 
   return (
     <div>
@@ -281,7 +279,7 @@ const Hompage = () => {
         </div>
       </section>
 
-      <section className="partners py-80">
+      <section className="partners py-80" ref={contacts}>
         <div className="container">
           <h2 className="text-center uppercase color-text pb-30">Партнеры</h2>
           {/* <p className="text-center">
@@ -300,7 +298,7 @@ const Hompage = () => {
         </div>
       </section>
 
-      <section className="contacts" ref={contacts}>
+      <section className="contacts">
         <div className="contact-title">
           <h2 className="text-center uppercase color-text pb-30">Контакты</h2>
           <h3 className="text-center">
