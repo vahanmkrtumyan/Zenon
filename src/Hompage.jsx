@@ -70,7 +70,6 @@ const Hompage = () => {
     setTimeout(function() {
       setClass("1");
     }, 0);
-    window.addEventListener("scroll", listener, true);
   }, []);
 
   useLayoutEffect(() => {
@@ -111,8 +110,8 @@ const Hompage = () => {
     }
 
     if (
-      scrollpos > serviceDimensions.top - 50 &&
-      scrollpos < serviceDimensions.bottom - 10
+      scrollpos > serviceDimensions.top - 150 &&
+      scrollpos < serviceDimensions.bottom - 150
     ) {
       if (!service) {
         setClass("service");
@@ -120,7 +119,7 @@ const Hompage = () => {
     }
 
     if (
-      scrollpos > aboutDimensions.top - 50 &&
+      scrollpos > aboutDimensions.top - 30 &&
       scrollpos < aboutDimensions.bottom
     ) {
       if (!about) {
@@ -137,6 +136,8 @@ const Hompage = () => {
       }
     }
   };
+
+  window.addEventListener("scroll", listener, true);
 
   const scrollToRef = pos => {
     window.removeEventListener("scroll", listener, true);
