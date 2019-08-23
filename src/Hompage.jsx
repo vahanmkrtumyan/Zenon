@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 //import useOnScreen from "./useOnScreen";
 import Logo from "./img/logo.png";
-import FooterLogo from "./img/footer-logo.png";
+
 import Image1 from "./img/image1.png";
 import Image2 from "./img/image2.png";
 import Image3 from "./img/image3.png";
@@ -18,6 +18,8 @@ import Partner6 from "./img/logo6.png";
 import Phone from "./img/phone-call.png";
 import Location from "./img/location.png";
 import Mail from "./img/mail.png";
+import Footer from "./Footer";
+import Feedback from "./Feedback";
 
 const Hompage = () => {
   const [className, setClassName] = useState("");
@@ -33,9 +35,6 @@ const Hompage = () => {
   const services = useRef();
   const aboutus = useRef();
   const contacts = useRef();
-
-  const scrollToRef = pos =>
-    document.getElementById(pos).scrollIntoView({ behavior: "smooth" });
 
   function setClass(clas) {
     if (clas === "service") {
@@ -71,6 +70,7 @@ const Hompage = () => {
     setTimeout(function() {
       setClass("1");
     }, 0);
+    window.addEventListener("scroll", listener, true);
   }, []);
 
   useLayoutEffect(() => {
@@ -89,8 +89,7 @@ const Hompage = () => {
     setContactDimensions(contacts.current.getBoundingClientRect());
   }, [contacts.current]);
 
-  window.addEventListener("scroll", function() {
-
+  var listener = function() {
     let scrollpos = window.scrollY;
 
     if (scrollpos > 100) {
@@ -121,7 +120,7 @@ const Hompage = () => {
     }
 
     if (
-      scrollpos > aboutDimensions.top + 100 &&
+      scrollpos > aboutDimensions.top + 150 &&
       scrollpos < aboutDimensions.bottom
     ) {
       if (!about) {
@@ -130,14 +129,22 @@ const Hompage = () => {
     }
 
     if (
-      scrollpos > contactDimensions.top - 100 &&
+      scrollpos > contactDimensions.top - 150 &&
       scrollpos < contactDimensions.bottom
     ) {
       if (!contact) {
         setClass("contact");
       }
     }
-  });
+  };
+
+  const scrollToRef = pos => {
+    window.removeEventListener("scroll", listener, true);
+    document.getElementById(pos).scrollIntoView({ behavior: "smooth" });
+    setTimeout(function() {
+      window.removeEventListener("scroll", listener, true);
+    }, 1000);
+  };
 
   // const bannerView = useOnScreen(banner, "-90px");
   // const serviceView = useOnScreen(services, "0px");
@@ -318,112 +325,9 @@ const Hompage = () => {
           </ul>
         </div>
         <div className="map" />
-        <div className="contact-form">
-          <p className="color-white text-center pb-30">
-            МЫ ОТВЕТИМ ВАМ В КРАТЧАЙШИЕ СРОКИ
-          </p>
-          <form action="">
-            <div className="form-inputs pb-25">
-              <div>
-                <input type="text" placeholder="имя" />
-              </div>
-              <div>
-                <input type="text" placeholder="Email" />
-              </div>
-            </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="письмо" />
-
-            <div className="text-right pt-30">
-              <button className="btn  btn-sm primary">послать</button>
-            </div>
-          </form>
-        </div>
+        <Feedback />
       </section>
-
-      <footer>
-        <div className="top-footer">
-          <div className="container">
-            <div className="top-footer-cols">
-              <div>
-                <h5>ПЛАТФОРМА</h5>
-                <ul>
-                  <li>
-                    <a href="#">Услуги</a>
-                  </li>
-                  <li>
-                    <a href="#">О компании</a>
-                  </li>
-                  <li>
-                    <a href="#">Проекты</a>
-                  </li>
-                  <li>
-                    <a href="#">Партнеры</a>
-                  </li>
-                  <li>
-                    <a href="#">Качество и Сертификаты</a>
-                  </li>
-                  <li>
-                    <a href="#">Контакты</a>
-                  </li>
-                  <li>
-                    <a href="#">English</a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h5>Услуги</h5>
-                <ul>
-                  <li>
-                    <a href="#">Проектно-конструкторские работы</a>
-                  </li>
-                  <li>
-                    <a href="#">Изготовление оборудования по чертежам</a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Поставка готового технологического оборудования
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">Другие услуги</a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h5>Партнеры</h5>
-                <ul>
-                  <li>
-                    <a href="#">АО «Газпром газэнергосеть»</a>
-                  </li>
-                  <li>
-                    <a href="#">ОООО «Газпром межрегионгаз»</a>
-                  </li>
-                  <li>
-                    <a href="#">ООО «Газпром газомоторное топливо»</a>
-                  </li>
-                  <li>
-                    <a href="#">ООО «Газпром энергохолдинг»</a>
-                  </li>
-                  <li>
-                    <a href="#">ПАО «МОЭК».</a>
-                  </li>
-                  <li>
-                    <a href="#">Министерство промышленности и торговли РФ</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <p className="text-center pt-20">
-              © Zenon-stroyinvest, 2019. Все права защищены.
-            </p>
-          </div>
-        </div>
-        <div className="bottom-footer text-center">
-          <a href="#">
-            <img src={FooterLogo} alt="" />
-          </a>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
