@@ -14,6 +14,7 @@ import Mail from "./img/mail.png";
 import Footer from "./Footer";
 import Feedback from "./Feedback";
 import navigateTo from "./lib/NavigateTo";
+import { Collapse } from "react-collapse";
 
 const Hompage = () => {
   const [className, setClassName] = useState("");
@@ -24,6 +25,7 @@ const Hompage = () => {
   const [bannerDimensions, setBannerDimensions] = useState({});
   const [aboutDimensions, setAboutDimensions] = useState({});
   const [contactDimensions, setContactDimensions] = useState({});
+  const [isOpened, setIsopened] = useState(false);
 
   const partnerImages = ["logo1", "logo2", "logo3", "logo4", "logo5", "logo6"];
 
@@ -247,7 +249,27 @@ const Hompage = () => {
                 поиск, подбор и поставку аналогов зарубежного оборудования,
                 находящегося под санкциями на ввоз в РФ.
               </p>
-              <button className="btn outline btn-sm">далее</button>
+              <Collapse isOpened={isOpened}>
+                <div>
+                  {" "}
+                  Единый центр компетенций на базе ЗАО «ЗенонСтройИнвест» г.
+                  Ереван, Республика Армения, решает следующие задачи —
+                  объединение в одну цепочку всего этапа разработки проектных
+                  решений, поставки оборудования, испытаний, сертификации в
+                  рамках Евразийского Союза; — унификация технических решений,
+                  снижение их стоимости; — снижение времени на разработку и
+                  внедрение; — транслирование технологий из гражданского сектора
+                  в военный, и наоборот; — замена зарубежных технических решений
+                  и иностранных производителей; — возможность работы со
+                  специальными счетами (казначейский, военный)
+                </div>
+              </Collapse>
+              <button
+                className="btn outline btn-sm"
+                onClick={() => setIsopened(!isOpened)}
+              >
+                далее
+              </button>
             </div>
             <div
               className="section-img"
