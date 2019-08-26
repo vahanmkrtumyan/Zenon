@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 //import useOnScreen from "./useOnScreen";
 import Logo from "./img/logo.png";
-
 import Image1 from "./img/image1.png";
 import Image2 from "./img/image2.png";
 import Image3 from "./img/image3.png";
@@ -9,17 +8,12 @@ import Image4 from "./img/image4.png";
 import Quality from "./img/quality.jpg";
 import About from "./img/about.jpg";
 import Arrow from "./img/arrow-right.svg";
-import Partner1 from "./img/partner-logo1.png";
-import Partner2 from "./img/logo2.png";
-import Partner3 from "./img/logo3.png";
-import Partner4 from "./img/logo4.png";
-import Partner5 from "./img/logo5.png";
-import Partner6 from "./img/logo6.png";
 import Phone from "./img/phone-call.png";
 import Location from "./img/location.png";
 import Mail from "./img/mail.png";
 import Footer from "./Footer";
 import Feedback from "./Feedback";
+import navigateTo from "./lib/NavigateTo";
 
 const Hompage = () => {
   const [className, setClassName] = useState("");
@@ -30,6 +24,8 @@ const Hompage = () => {
   const [bannerDimensions, setBannerDimensions] = useState({});
   const [aboutDimensions, setAboutDimensions] = useState({});
   const [contactDimensions, setContactDimensions] = useState({});
+
+  const partnerImages = ["logo1", "logo2", "logo3", "logo4", "logo5", "logo6"];
 
   const banner = useRef();
   const services = useRef();
@@ -55,6 +51,8 @@ const Hompage = () => {
       setContact("");
     }
   }
+
+  window.addEventListener("scroll", listener);
 
   useEffect(() => {
     try {
@@ -88,16 +86,17 @@ const Hompage = () => {
     setContactDimensions(contacts.current.getBoundingClientRect());
   }, [contacts.current]);
 
-  var listener = function() {
+  function listener() {
     let scrollpos = window.scrollY;
-
     if (scrollpos > 100) {
+      // console.log(className)
       if (!className) {
         setClassName("sticky");
       }
     }
 
     if (scrollpos < 100) {
+      console.log(className);
       if (className) {
         setClassName("");
       }
@@ -135,9 +134,7 @@ const Hompage = () => {
         setClass("contact");
       }
     }
-  };
-
-  window.addEventListener("scroll", listener, true);
+  }
 
   const scrollToRef = pos => {
     window.removeEventListener("scroll", listener, true);
@@ -164,13 +161,19 @@ const Hompage = () => {
           <nav className="header-menu">
             <ul>
               <li className={service} onClick={() => setClass("service")}>
-                <a onClick={() => scrollToRef("serv")}>услуги</a>
+                <a href="#serv" onClick={navigateTo}>
+                  услуги
+                </a>
               </li>
               <li className={about} onClick={() => setClass("about")}>
-                <a onClick={() => scrollToRef("about")}>О компании</a>
+                <a href="#about" onClick={navigateTo}>
+                  О компании
+                </a>
               </li>
               <li className={contact} onClick={() => setClass("contact")}>
-                <a onClick={() => scrollToRef("contact")}>Контакты</a>
+                <a onClick={navigateTo} href="#contact">
+                  Контакты
+                </a>
               </li>
             </ul>
           </nav>
@@ -184,10 +187,9 @@ const Hompage = () => {
             Один из лидеров рынка ЕАЭС по сорсингу и поставке огромного спектра
             товаров
           </p>
-          <p id="serv" />
         </div>
       </section>
-      <section />
+      <div style={{ paddingTop: "35px" }} id="serv" />
       <section className="services" ref={services}>
         <button className="btn with-img btn-lg primary">
           услуги <img src={Arrow} alt="" />
@@ -289,17 +291,14 @@ const Hompage = () => {
             менеджмента качества, постоянно внедряем
           </p> */}
           <div className="partners-logos pt-50">
-            <img src={Partner1} alt="" />
-            <img src={Partner2} alt="" />
-            <img src={Partner3} alt="" />
-            <img src={Partner4} alt="" />
-            <img src={Partner5} alt="" />
-            <img src={Partner6} alt="" id="contact" />
+            {partnerImages.map(item => (
+              <img key={item} src={require(`../src/img/${item}.png`)} />
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="contacts">
+      <section id="contact" className="contacts">
         <div className="contact-title">
           <h2 className="text-center uppercase color-text pb-30">Контакты</h2>
           <h3 className="text-center">
