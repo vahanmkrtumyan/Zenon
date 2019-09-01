@@ -1,0 +1,19 @@
+.cls-1{
+    opacity: 0;
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+        opacity: .3;
+    }
+}
+.cls-2{
+    fill:#7bc0c9;
+}
+.cls-3{fill:url(#linear-gradient);}
+.cls-4{fill:url(#linear-gradient-2);}
+.cls-5{fill:url(#linear-gradient-3);}
+.cls-6{fill:url(#linear-gradient-4);}
+.cls-7{fill:url(#linear-gradient-5);}
+.cls-8{fill:url(#linear-gradient-6);}
+.cls-9{fill:#743e83;}

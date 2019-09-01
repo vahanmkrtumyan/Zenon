@@ -5,10 +5,16 @@
     .top-footer-cols {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
 
         >div:not(:last-child) {
             padding-right: 100px;
+            padding-bottom: 25px;
         }
+    }
+
+    h5 {
+        text-transform: uppercase;
     }
 
     ul {

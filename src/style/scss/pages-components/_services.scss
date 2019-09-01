@@ -2,10 +2,103 @@
     min-height: 980px;
     align-items: flex-start;
 
+    .services-img {
+        position: absolute;
+        top: 50px;
+        left: 0;
+    }
+
+    h1 {
+        width: 600px;
+        padding-top: 25px;
+        text-align: left;
+        margin: 0 auto;
+        font-family: $font-secondary;
+    }
+
     .content {
         width: 1260px;
         margin: 0 auto;
         padding: 0 20px;
         text-align: center;
+        position: relative;
+    }
+}
+
+.other-services {
+    padding: 100px 0;
+    background: url("../../../img/other-services.jpg") no-repeat center center;
+    background-size: cover;
+    color: #fff;
+
+    h3 {
+        font-family: $font-secondary;
+        text-transform: uppercase;
+        padding-bottom: 50px;
+    }
+
+
+    .content {
+        max-width: 820px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 30px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    ul, li {
+        list-style: disc;
+    }
+}
+
+.service-section {
+    .img-right {
+        .section-top {
+            margin-left: auto;
+
+            .section-top-text {
+
+                h3 {
+                    padding-right: 52px;
+                }
+            }
+        }
+    }
+    .img-left {
+        .section-top {
+            margin-right: auto;
+
+            .section-top-text {
+                flex-direction: row-reverse;
+
+                h3 {
+                    padding-left: 52px;
+
+                    text-align: right;
+                }
+            }
+        }
+    }
+    .section-top {
+        width: 80%;
+        .section-img {
+            top: 100px;
+        }
+
+        .section-top-text {
+            display: flex;
+
+            .gradient-bg {
+                height: 100px;
+                width: 50%;
+                background: $gradient-secondary;
+
+            }
+            h3 {
+                width: 50%;
+                text-transform: uppercase;
+            }
+        }
     }
 }

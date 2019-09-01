@@ -1,186 +1,191 @@
 .home-banner {
-  min-height: 840px;
+    min-height: 840px;
 
-  .content {
-    width: 840px;
-    margin: 0 auto;
-    padding: 0 20px;
-    text-align: center;
-  }
+    .content {
+        max-width: 840px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 20px;
+        text-align: center;
+    }
 
-  h1 {
-    margin-bottom: 150px;
-  }
+    h1 {
+        margin-bottom: 150px;
+    }
 
-  p {
-    width: 600px;
-    margin: 0 auto;
-    font-size: 24px;
-    color: #492392;
-  }
+    p {
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+        font-size: 24px;
+        color: #492392;
+    }
 }
 
 .services {
-  background-image: $gradient-primary;
-  padding: 100px 0;
-  position: relative;
-
-  button {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-  }
-
-  .container {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .service-card {
-    display: block;
-    cursor: pointer;
-    width: 24%;
-    height: 250px;
-    background: no-repeat center center;
-    background-size: cover;
-    border-radius: 6px;
+    background-image: $gradient-primary;
+    padding: 100px 0;
     position: relative;
-    box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s;
 
-    &:hover {
-      transform: scale(1.15);
-      z-index: 1;
-      box-shadow: 0px 0px 74px 2px rgba(0, 0, 0, 0.2);
+    button {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
     }
 
-    p {
-      position: absolute;
-      bottom: 10px;
-      left: 0;
-      right: 0;
-      padding: 0 10px;
-      text-align: center;
-      color: #fff;
-      font-size: 16px;
-      text-transform: uppercase;
+    .container {
+        display: flex;
+        justify-content: space-between;
     }
-  }
+
+    .service-card {
+        display: block;
+        cursor: pointer;
+        width: 24%;
+        height: 250px;
+        background: no-repeat center center;
+        background-size: cover;
+        border-radius: 6px;
+        position: relative;
+        box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s;
+
+        &:hover {
+            transform: scale(1.15);
+            z-index: 1;
+            box-shadow: 0px 0px 74px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            padding: 0 10px;
+            text-align: center;
+            color: #fff;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+    }
 }
 
 .about-company {
-  padding: 180px 0;
-  background: url("../../../img/zenon-bg.png") no-repeat right top;
-  background-size: 80%;
+    padding: 180px 0;
+    background: url("../../../img/zenon-bg.png") no-repeat right top;
+    background-size: 80%;
 }
 
 .text-with-img {
-  margin-top: 30px;
-  position: relative;
+    margin-top: 30px;
+    position: relative;
 
-  .section-img {
-    width: 80%;
-    height: 545px;
-    background: no-repeat center;
-    background-size: cover;
-  }
-  .section-text {
-    position: absolute;
-    bottom: -100px;
-    padding: 70px 50px;
-    width: 600px;
-    background-color: #f1fbff;
-
-    p {
-      padding-bottom: 40px;
-    }
-  }
-
-  &.img-right {
     .section-img {
-      margin-left: auto;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        width: 80%;
+        height: 545px;
+        background: no-repeat center;
+        background-size: cover;
     }
     .section-text {
-      left: 0;
-    }
-  }
+        padding-top: 100px;
+        width: 600px;
 
-  &.img-left {
-    .section-img {
-      margin-right: auto;
+
+        .section-text-content {
+            padding: 70px 50px;
+            background-color: #f1fbff;
+        }
     }
-    .section-text {
-      right: 0;
+
+    &.img-right {
+        .section-text {
+            margin-right: auto;
+        }
+        .section-img {
+            right: 0;
+        }
     }
-  }
+
+    &.img-left {
+        .section-text{
+            margin-left: auto;
+        }
+        .section-img  {
+            left: 0;
+        }
+    }
 }
 
 .quality {
-  padding-bottom: 100px;
+    padding-bottom: 100px;
 }
 
 .partners {
-  p {
-    width: 600px;
-    margin: 0 auto;
-  }
+    p {
+        width: 600px;
+        margin: 0 auto;
+    }
 }
 
 .partners-logos {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 
-  img {
-    margin: 0 25px;
-  }
+    img {
+        margin: 0 25px 15px;
+    }
 }
 
 .contact-title {
-  background-color: #eae9f6;
-  padding: 50px 0;
+    background-color: #eae9f6;
+    padding: 50px 0;
 
-  p {
-    width: 600px;
-    margin: 0 auto;
-  }
+    p {
+        width: 600px;
+        margin: 0 auto;
+    }
 }
 
 .contact-social {
-  background-image: $gradient-primary;
-  padding: 40px;
+    background-image: $gradient-primary;
+    padding: 40px;
 
-  ul {
-    display: flex;
-    justify-content: center;
-    color: #fff;
+    ul {
+        display: flex;
+        justify-content: center;
+        color: #fff;
 
-    li {
-      margin: 0 50px;
-      display: flex;
-      align-items: center;
+        li {
+            margin: 0 50px;
+            display: flex;
+            align-items: center;
 
-      img {
-        margin-right: 20px;
-      }
+            img {
+                margin-right: 20px;
+            }
+        }
     }
-  }
 }
 
 .contact-form {
-  background-image: $gradient-primary;
-  padding: 80px 0;
+    background-image: $gradient-primary;
+    padding: 80px 0;
 
-  form {
-    max-width: 700px;
-    padding: 0 20px;
-    margin: 0 auto;
-  }
+    form {
+        max-width: 700px;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
 }
 .form-inputs {
-  display: flex;
-  justify-content: space-between;
-  > div {
-    width: 48%;
-  }
+    display: flex;
+    justify-content: space-between;
+    > div {
+        width: 48%;
+    }
 }

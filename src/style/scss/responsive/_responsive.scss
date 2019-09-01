@@ -1,0 +1,129 @@
+@media (max-width: 1023px) {
+    /*globa;*/
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 34px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+
+    .banner {
+        background-size: contain;
+    }
+    .home-banner {
+        min-height: 650px;
+    }
+
+    .partners-logos {
+        padding-top: 0;
+
+        img {
+            width: 90px;
+        }
+    }
+
+    .contact-social {
+        ul {
+            li {
+                margin: 0 20px;
+
+                img {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .btn {
+
+        &.btn-lg {
+            font-size: 24px;
+            width: 200px;
+            border-radius: 50px;
+        }
+
+        &.btn-sm {
+            /*font-size: 16px;
+            font-family: $font-primary;
+            padding: 10px;
+            width: 130px;
+            border-radius: 25px;*/
+        }
+
+    }
+
+
+    .home-banner {
+        min-height: 400px;
+
+        h1 {
+            margin-bottom: 30px;
+        }
+    }
+
+    .text-with-img {
+
+        .section-img {
+            position: static;
+            width: 100%;
+            height: 300px;
+        }
+
+        .section-text {
+            padding-top: 0;
+            width: 100%;
+        }
+    }
+
+    .quality {
+        padding-bottom: 50px;
+    }
+    
+    .about-company {
+        padding: 50px 0;
+    }
+
+    .contact-social {
+        padding: 40px 20px;
+        ul {
+            flex-wrap: wrap;
+            width: 230px;
+            margin: 0 auto;
+
+            li {
+                width: 100%;
+                margin: 0;
+                padding-bottom: 25px;
+
+                img {
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+
+    .top-footer {
+        .top-footer-cols {
+
+            >div {
+                width: 100%;
+                text-align: center;
+
+                &:not(:last-child) {
+                    padding-right: 0;
+                }
+                &:last-child {
+                    padding-bottom: 40px;
+                }
+            }
+        }
+    }
+}
