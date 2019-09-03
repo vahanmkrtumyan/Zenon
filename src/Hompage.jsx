@@ -15,6 +15,8 @@ import Feedback from "./Feedback";
 import navigateTo from "./lib/NavigateTo";
 import { Collapse } from "react-collapse";
 import { Link } from "react-router-dom";
+import Slider from "react-slick";
+
 
 const Hompage = () => {
   const [className, setClassName] = useState("");
@@ -146,6 +148,44 @@ const Hompage = () => {
     document.getElementById(pos).scrollIntoView({ behavior: "smooth" });
   };
 
+  let settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1023,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+          arrows: false
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+          arrows: false
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false
+        }
+      }
+    ]
+  };
+
   // const bannerView = useOnScreen(banner, "-90px");
   // const serviceView = useOnScreen(services, "0px");
   // const aboutView = useOnScreen(aboutus, "0px");
@@ -161,6 +201,11 @@ const Hompage = () => {
             </a>
           </div>
           <nav className="header-menu">
+            <div className="burger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
             <ul>
               <li className={service} onClick={() => setClass("service")}>
                 <Link to={`/Services`}>услуги</Link>
@@ -191,38 +236,38 @@ const Hompage = () => {
       </section>
       <div style={{ paddingTop: "35px" }} id="serv" />
       <section className="services" ref={services}>
-        <button className="btn with-img btn-lg primary">
+        <button className="btn with-img btn-lg primary service-btn">
           услуги <img src={Arrow} alt="" />
         </button>
         <div className="container">
-          <a
-            href="#"
-            className="service-card"
-            style={{ backgroundImage: `url(${Image1})` }}
-          >
-            <p>Проектно-конструкторские работы</p>
-          </a>
-          <a
-            href="#"
-            className="service-card"
-            style={{ backgroundImage: `url(${Image2})` }}
-          >
-            <p>Изготовление оборудования по чертежам</p>
-          </a>
-          <a
-            href="#"
-            className="service-card"
-            style={{ backgroundImage: `url(${Image3})` }}
-          >
-            <p>Поставка готового технологического оборудования</p>
-          </a>
-          <a
-            href="#"
-            className="service-card"
-            style={{ backgroundImage: `url(${Image4})` }}
-          >
-            <p>другие услуги</p>
-          </a>
+          <Slider {...settings}>
+            <div
+              className="service-card"
+            >
+              <img src={Image1} alt=""/>
+              <p>Проектно-конструкторские работы</p>
+            </div>
+            <div
+              className="service-card"
+            >
+              <img src={Image2} alt=""/>
+              <p>Изготовление оборудования по чертежам</p>
+            </div>
+            <div
+              className="service-card"
+              style={{ backgroundImage: `url(${Image3})` }}
+            >
+              <img src={Image3} alt=""/>
+              <p>Поставка готового технологического оборудования</p>
+            </div>
+            <div
+              className="service-card"
+            >
+              <img src={Image4} alt=""/>
+              <p>другие услуги</p>
+            </div>
+          </Slider>
+
         </div>
       </section>
       <section id="abouts"></section>

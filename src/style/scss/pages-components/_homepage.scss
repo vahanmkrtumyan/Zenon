@@ -1,3 +1,5 @@
+
+
 .home-banner {
     min-height: 840px;
 
@@ -27,34 +29,32 @@
     padding: 100px 0;
     position: relative;
 
-    button {
+    .service-btn {
         position: absolute;
         top: 0;
         left: 50%;
         transform: translateY(-50%) translateX(-50%);
     }
 
-    .container {
-        display: flex;
-        justify-content: space-between;
-    }
-
     .service-card {
         display: block;
         cursor: pointer;
-        width: 24%;
-        height: 250px;
-        background: no-repeat center center;
-        background-size: cover;
-        border-radius: 6px;
+        width: 90%;
+        height: 0;
+        padding-bottom: 66.67%;
         position: relative;
         box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.2);
         transition: all 0.3s;
 
         &:hover {
-            transform: scale(1.15);
+            transform: scale(1.06);
             z-index: 1;
             box-shadow: 0px 0px 74px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            position: absolute;
+            border-radius: 6px;
         }
 
         p {

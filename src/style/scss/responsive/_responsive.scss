@@ -12,12 +12,27 @@
         font-size: 20px;
     }
 
+    .header-menu {
+        ul {
+            li {
+                margin-left: 20px;
+            }
+        }
+    }
 
     .banner {
         background-size: contain;
     }
     .home-banner {
         min-height: 650px;
+
+        p {
+            font-size: 14px;
+        }
+    }
+
+    .services {
+        padding: 50px 0;
     }
 
     .partners-logos {
@@ -42,6 +57,20 @@
 }
 
 @media (max-width: 767px) {
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    h3 {
+        font-size: 14px;
+    }
+
+
     .btn {
 
         &.btn-lg {
@@ -60,6 +89,44 @@
 
     }
 
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .header-menu {
+        ul {
+            opacity: 0;
+            visibility: hidden;
+            flex-direction: column;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            z-index: 10;
+            text-align: center;
+            background: #fff;
+            box-shadow: 1px 1px 3px rgba(0,0,0,.15);
+            transition: all .5s;
+            top: 100%;
+            padding: 20px 0;
+
+            &.open {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            li {
+                margin-left: 0;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+
+    .burger {
+        display: block;
+    }
+
 
     .home-banner {
         min-height: 400px;
@@ -67,6 +134,10 @@
         h1 {
             margin-bottom: 30px;
         }
+    }
+
+    .services {
+        padding: 40px 0;
     }
 
     .text-with-img {
@@ -80,16 +151,22 @@
         .section-text {
             padding-top: 0;
             width: 100%;
+
+            .section-text-content {
+                padding: 30px 20px;
+            }
         }
     }
 
     .quality {
         padding-bottom: 50px;
     }
-    
+
     .about-company {
         padding: 50px 0;
     }
+
+
 
     .contact-social {
         padding: 40px 20px;
@@ -105,10 +182,31 @@
 
                 img {
                     margin-right: 20px;
+
+                    width: 24px;
                 }
             }
         }
     }
+
+    .contact-form {
+        padding: 40px 0;
+    }
+
+    .form-inputs {
+        flex-wrap: wrap;
+
+        >div {
+            width: 100%;
+
+            &:first-child {
+                padding-bottom: 25px;
+            }
+        }
+    }
+
+
+
 
     .top-footer {
         .top-footer-cols {

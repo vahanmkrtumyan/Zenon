@@ -1,0 +1,30 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+.slick-slide {
+    padding: 0 10px;
+
+    img {
+        width: 100%;
+    }
+}
+.slick-track {
+    padding: 40px 0px;
+}
+.slick-dots {
+    li {
+        button {
+            &:before {
+                font-size: 10px;
+                color: $color-secondary;
+            }
+        }
+        &.slick-active {
+            button {
+                &:before {
+                    color: $color-secondary;
+                }
+            }
+        }
+    }
+}
