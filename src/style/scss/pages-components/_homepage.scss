@@ -92,7 +92,8 @@
     }
     .section-text {
         padding-top: 100px;
-        width: 600px;
+        max-width: 600px;
+        width: 100%;
 
 
         .section-text-content {

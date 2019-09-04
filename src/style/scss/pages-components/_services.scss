@@ -1,5 +1,5 @@
 .services-banner {
-    min-height: 980px;
+    min-height: 930px;
     align-items: flex-start;
 
     .services-img {
@@ -9,11 +9,12 @@
     }
 
     h1 {
-        width: 600px;
+        max-width: 600px;
+        width: 100%;
         padding-top: 25px;
         text-align: left;
         margin: 0 auto;
-        font-family: $font-secondary;
+        //font-family: $font-secondary;
     }
 
     .content {
@@ -101,4 +102,6 @@
             }
         }
     }
+
+
 }
