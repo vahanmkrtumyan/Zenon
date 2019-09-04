@@ -17,7 +17,6 @@ import { Collapse } from "react-collapse";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 
-
 const Hompage = () => {
   const [className, setClassName] = useState("");
   const [service, setService] = useState("");
@@ -28,6 +27,8 @@ const Hompage = () => {
   const [aboutDimensions, setAboutDimensions] = useState({});
   const [contactDimensions, setContactDimensions] = useState({});
   const [isOpened, setIsopened] = useState(false);
+  const [isOpened2, setIsopened2] = useState(false);
+  const [burgerOpen, setBurgerOpen] = useState(false);
 
   const partnerImages = ["logo1", "logo2", "logo3", "logo4", "logo5", "logo6"];
 
@@ -140,6 +141,10 @@ const Hompage = () => {
     }
   }
 
+  let toggle = () => {
+    setBurgerOpen(!burgerOpen);
+  };
+
   const scrollToRef = pos => {
     window.removeEventListener("scroll", listener, true);
     setTimeout(function() {
@@ -185,11 +190,7 @@ const Hompage = () => {
       }
     ]
   };
-
-  // const bannerView = useOnScreen(banner, "-90px");
-  // const serviceView = useOnScreen(services, "0px");
-  // const aboutView = useOnScreen(aboutus, "0px");
-  // const contac = useOnScreen(contacts, "0px", 0.8);
+  console.log(burgerOpen);
 
   return (
     <div>
@@ -201,12 +202,15 @@ const Hompage = () => {
             </a>
           </div>
           <nav className="header-menu">
-            <div className="burger">
+            <div
+              onClick={() => toggle()}
+              className={`burger ${burgerOpen ? "open" : ""}`}
+            >
               <span></span>
               <span></span>
               <span></span>
             </div>
-            <ul>
+            <ul className={burgerOpen ? "open" : ""}>
               <li className={service} onClick={() => setClass("service")}>
                 <Link to={`/Services`}>услуги</Link>
               </li>
@@ -241,33 +245,26 @@ const Hompage = () => {
         </button>
         <div className="container">
           <Slider {...settings}>
-            <div
-              className="service-card"
-            >
-              <img src={Image1} alt=""/>
+            <div className="service-card">
+              <img src={Image1} alt="" />
               <p>Проектно-конструкторские работы</p>
             </div>
-            <div
-              className="service-card"
-            >
-              <img src={Image2} alt=""/>
+            <div className="service-card">
+              <img src={Image2} alt="" />
               <p>Изготовление оборудования по чертежам</p>
             </div>
             <div
               className="service-card"
               style={{ backgroundImage: `url(${Image3})` }}
             >
-              <img src={Image3} alt=""/>
+              <img src={Image3} alt="" />
               <p>Поставка готового технологического оборудования</p>
             </div>
-            <div
-              className="service-card"
-            >
-              <img src={Image4} alt=""/>
+            <div className="service-card">
+              <img src={Image4} alt="" />
               <p>другие услуги</p>
             </div>
           </Slider>
-
         </div>
       </section>
       <section id="abouts"></section>
@@ -344,9 +341,52 @@ const Hompage = () => {
                   сотрудников. На всю продукцию предоставляется гарантийный
                   срок, по истечении которого наш сервисный центр выполняет пост
                   гарантийное обслуживание. Производство имеет все необходимые
-                  лицензии, разрешения, сертификаты...
+                  лицензии, разрешения, сертификаты:
                 </p>
-                <button className="btn outline btn-sm mt-20">далее</button>
+                <Collapse isOpened={isOpened2}>
+                  <div>
+                    <ul>
+                      <li>
+                        Сертификат на соответствие требованиям ГОСТ ISO
+                        9001-2011 (ISO 9001:2008), Сертификация промышленного
+                        оборудования по стандартам TÜV SÜD Евросою́за, ЕС.
+                      </li>
+                      <li>
+                        Свидетельство СТЭК об аттестации лаборатории
+                        неразрушающего контроля Сертификат на право изготовления
+                        сосудов, работающих под давлением, в соответствии с
+                        требованиями международных стандартов кодекса ASME
+                        секция U, расчетами прочности для отдельных типов
+                        товаров,в соответствии с EN 14335.
+                      </li>
+                      <li>
+                        Разрешение на применение сосудов, колонных, емкостных,
+                        теплообменных аппаратов, аппаратов с перемешивающими
+                        устройствами и т.д.
+                      </li>
+                      <li>
+                        Разрешения на выполнение проектных и конструкторских
+                        работ.
+                      </li>
+                      <li>
+                        Свидетельства НАКС о готовности к использованию
+                        аттестованной технологии сварки в соответствии с
+                        требованиями РД 03-615-03, об аттестации сварочного
+                        оборудования на марки оборудования: ВДУ-1250, АДФ-1000 и
+                        КЕМПОМАТ4200.
+                      </li>
+                      <li>
+                        Декларация соответствия ТС № RU Д- RU.МН 09В00058.
+                      </li>
+                    </ul>
+                  </div>
+                </Collapse>
+                <button
+                  className="btn outline btn-sm mt-20"
+                  onClick={() => setIsopened2(!isOpened2)}
+                >
+                  далее
+                </button>
               </div>
             </div>
           </div>

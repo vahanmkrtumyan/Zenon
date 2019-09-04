@@ -34,7 +34,7 @@ const ServicesImage = () => {
           y1="282.23"
           x2="244.54"
           y2="282.23"
-          xmlnsHref="#linear-gradient"
+          xmlnshref="#linear-gradient"
           gradientUnits="userSpaceOnUse"
         >
           <stop offset="0" stopColor="#6fc1c6" />
@@ -50,7 +50,7 @@ const ServicesImage = () => {
           y1="541.49"
           x2="1083.27"
           y2="541.49"
-          xmlnsHref="#linear-gradient"
+          xmlnshref="#linear-gradient"
           gradientUnits="userSpaceOnUse"
         >
           <stop offset="0" stopColor="#6fc1c6" />
@@ -66,7 +66,7 @@ const ServicesImage = () => {
           y1="821.89"
           x2="1083.27"
           y2="821.89"
-          xmlnsHref="#linear-gradient"
+          xmlnshref="#linear-gradient"
           gradientUnits="userSpaceOnUse"
         >
           <stop offset="0" stopColor="#6fc1c6" />
@@ -82,7 +82,7 @@ const ServicesImage = () => {
           y1="401.3"
           x2="1326.12"
           y2="401.3"
-          xmlnsHref="#linear-gradient"
+          xmlnshref="#linear-gradient"
           gradientUnits="userSpaceOnUse"
         >
           <stop offset="0" stopColor="#6fc1c6" />
@@ -98,7 +98,7 @@ const ServicesImage = () => {
           y1="281.45"
           x2="1134.12"
           y2="281.45"
-          xmlnsHref="#linear-gradient"
+          xmlnshref="#linear-gradient"
           gradientUnits="userSpaceOnUse"
         >
           <stop offset="0" stopColor="#6fc1c6" />
