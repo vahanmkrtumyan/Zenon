@@ -244,9 +244,13 @@ const Hompage = () => {
       </section>
       <div style={{ paddingTop: "35px" }} id="serv" />
       <section className="services" ref={services}>
-        <button className="btn with-img btn-lg primary service-btn">
-          <Link to={`/Services`}>услуги</Link> <img src={Arrow} alt="" />
-        </button>
+        <HashLink to={`/Services/#top`}>
+          {" "}
+          <button className="btn with-img btn-lg primary service-btn">
+            услуги
+            <img src={Arrow} alt="" />
+          </button>
+        </HashLink>
         <div className="container">
           <Slider {...settings}>
             <div className="service-card">
