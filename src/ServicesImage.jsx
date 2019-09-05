@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import {HashLink} from 'react-router-hash-link'
+import { HashLink } from "react-router-hash-link";
 
 const ServicesImage = () => {
   return (
@@ -111,16 +110,15 @@ const ServicesImage = () => {
       </defs>
 
       <g className="cls-1">
-      <HashLink to='/Services/#project'>
+        <HashLink to="/Services/#project">
           <polygon
             className="cls-2"
             points="485.84 422.03 404.86 562.28 242.91 562.28 161.94 422.03 242.91 281.78 404.86 281.78 485.84 422.03"
           />
-          </HashLink>
+        </HashLink>
       </g>
       <g className="cls-1">
-      <HashLink to='/Services/#izg'>
-        
+        <HashLink to="/Services/#izg">
           <polygon
             className="cls-2"
             points="730.17 281.78 649.2 422.03 487.25 422.03 406.28 281.78 487.25 141.53 649.2 141.53 730.17 281.78"
@@ -128,8 +126,7 @@ const ServicesImage = () => {
         </HashLink>
       </g>
       <g className="cls-1">
-      <HashLink to='/Services/#post'>
-       
+        <HashLink to="/Services/#post">
           <polygon
             className="cls-2"
             points="971.43 142.19 890.45 282.44 728.5 282.44 647.53 142.19 728.5 1.94 890.45 1.94 971.43 142.19"
@@ -137,13 +134,11 @@ const ServicesImage = () => {
         </HashLink>
       </g>
       <g className="cls-1">
-            <HashLink to='/Services#other'>
-        {/* <a href="/Services/#other"> */}
+        <HashLink to="/Services#other">
           <polygon
             className="cls-2"
             points="728.58 563.7 647.61 703.95 485.66 703.95 404.68 563.7 485.66 423.45 647.61 423.45 728.58 563.7"
           />
-        {/* </a> */}
         </HashLink>
       </g>
       <path

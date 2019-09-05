@@ -1,5 +1,6 @@
 import React from "react";
 import FooterLogo from "./img/footer-logo.png";
+import { HashLink } from "react-router-hash-link";
 
 const Footer = () => {
   return (
@@ -12,44 +13,45 @@ const Footer = () => {
                 <h5>ПЛАТФОРМА</h5>
                 <ul>
                   <li>
-                    <a href="#">Услуги</a>
+                    <HashLink to="/Services/#top">Услуги</HashLink>
                   </li>
                   <li>
-                    <a href="#">О компании</a>
+                    <HashLink to="/#about">О компании</HashLink>
                   </li>
                   <li>
-                    <a href="#">Проекты</a>
+                    <HashLink to="/#partner">Партнеры</HashLink>
                   </li>
                   <li>
-                    <a href="#">Партнеры</a>
+                    <HashLink to="/#quality">Качество и Сертификаты</HashLink>
                   </li>
                   <li>
-                    <a href="#">Качество и Сертификаты</a>
+                    <HashLink to="/#cont">Контакты</HashLink>
                   </li>
-                  <li>
-                    <a href="#">Контакты</a>
-                  </li>
-                  <li>
+                  {/* <li>
                     <a href="#">English</a>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
               <div>
                 <h5>Услуги</h5>
                 <ul>
                   <li>
-                    <a href="#">Проектно-конструкторские работы</a>
+                    <HashLink to="/Services/#project">
+                      Проектно-конструкторские работы
+                    </HashLink>
                   </li>
                   <li>
-                    <a href="#">Изготовление оборудования по чертежам</a>
+                    <HashLink to="/Services/#izg">
+                      Изготовление оборудования по чертежам
+                    </HashLink>
                   </li>
                   <li>
-                    <a href="#">
+                    <HashLink to="/Services/#post">
                       Поставка готового технологического оборудования
-                    </a>
+                    </HashLink>
                   </li>
                   <li>
-                    <a href="#">Другие услуги</a>
+                    <HashLink to="/Services#other">Другие услуги</HashLink>
                   </li>
                 </ul>
               </div>
@@ -57,22 +59,22 @@ const Footer = () => {
                 <h5>Партнеры</h5>
                 <ul>
                   <li>
-                    <a href="#">АО «Газпром газэнергосеть»</a>
+                    <p>АО «Газпром газэнергосеть»</p>
                   </li>
                   <li>
-                    <a href="#">ОООО «Газпром межрегионгаз»</a>
+                    <p>ОООО «Газпром межрегионгаз»</p>
                   </li>
                   <li>
-                    <a href="#">ООО «Газпром газомоторное топливо»</a>
+                    <p>ООО «Газпром газомоторное топливо»</p>
                   </li>
                   <li>
-                    <a href="#">ООО «Газпром энергохолдинг»</a>
+                    <p>ООО «Газпром энергохолдинг»</p>
                   </li>
                   <li>
-                    <a href="#">ПАО «МОЭК».</a>
+                    <p>ПАО «МОЭК».</p>
                   </li>
                   <li>
-                    <a href="#">Министерство промышленности и торговли РФ</a>
+                    <p>Министерство промышленности и торговли РФ</p>
                   </li>
                 </ul>
               </div>
@@ -83,9 +85,9 @@ const Footer = () => {
           </div>
         </div>
         <div className="bottom-footer text-center">
-          <a href="#">
+          <HashLink to="/#top">
             <img src={FooterLogo} alt="" />
-          </a>
+          </HashLink>
         </div>
       </footer>
     </div>

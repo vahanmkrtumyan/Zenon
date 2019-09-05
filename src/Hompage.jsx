@@ -1,4 +1,7 @@
 import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
+import { Link } from "react-router-dom";
+import Slider from "react-slick";
+import { HashLink } from "react-router-hash-link";
 import Logo from "./img/logo.png";
 import Image1 from "./img/image1.png";
 import Image2 from "./img/image2.png";
@@ -14,8 +17,6 @@ import Footer from "./Footer";
 import Feedback from "./Feedback";
 import navigateTo from "./lib/NavigateTo";
 import { Collapse } from "react-collapse";
-import { Link } from "react-router-dom";
-import Slider from "react-slick";
 
 const Hompage = () => {
   const [className, setClassName] = useState("");
@@ -85,11 +86,12 @@ const Hompage = () => {
 
   useLayoutEffect(() => {
     setAboutDimensions(aboutus.current.getBoundingClientRect());
+    setContactDimensions(contacts.current.getBoundingClientRect());
   }, [aboutus.current]);
 
-  useLayoutEffect(() => {
-    setContactDimensions(contacts.current.getBoundingClientRect());
-  }, [contacts.current]);
+  // useLayoutEffect(() => {
+
+  // }, [contacts.current]);
 
   function listener() {
     let scrollpos = window.scrollY;
@@ -190,7 +192,6 @@ const Hompage = () => {
       }
     ]
   };
-  console.log(burgerOpen);
 
   return (
     <div>
@@ -210,9 +211,12 @@ const Hompage = () => {
               <span></span>
               <span></span>
             </div>
-            <ul className={burgerOpen ? "open" : ""}>
+            <ul
+              className={burgerOpen ? "open" : ""}
+              onClick={() => setBurgerOpen(false)}
+            >
               <li className={service} onClick={() => setClass("service")}>
-                <Link to={`/Services`}>услуги</Link>
+                <HashLink to="/Services/#top">услуги</HashLink>
               </li>
               <li className={about} onClick={() => setClass("about")}>
                 <a href="#about" onClick={navigateTo}>
@@ -321,6 +325,7 @@ const Hompage = () => {
             </div>
           </div>
         </div>
+        <p id="quality"></p>
       </section>
 
       <section className="quality">
@@ -393,7 +398,7 @@ const Hompage = () => {
         </div>
       </section>
 
-      <section className="partners py-80" ref={contacts}>
+      <section className="partners py-80" id="partner" ref={contacts}>
         <div className="container">
           <h2 className="text-center uppercase color-text pb-30">Партнеры</h2>
           {/* <p className="text-center">
