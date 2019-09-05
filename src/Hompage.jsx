@@ -241,7 +241,7 @@ const Hompage = () => {
       <div style={{ paddingTop: "35px" }} id="serv" />
       <section className="services" ref={services}>
         <button className="btn with-img btn-lg primary service-btn">
-          услуги <img src={Arrow} alt="" />
+          <Link to={`/Services`}>услуги</Link> <img src={Arrow} alt="" />
         </button>
         <div className="container">
           <Slider {...settings}>
