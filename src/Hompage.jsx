@@ -78,20 +78,10 @@ const Hompage = () => {
 
   useLayoutEffect(() => {
     setBannerDimensions(banner.current.getBoundingClientRect());
-  }, [banner.current]);
-
-  useLayoutEffect(() => {
-    setServiceDimensions(services.current.getBoundingClientRect());
-  }, [services.current]);
-
-  useLayoutEffect(() => {
     setAboutDimensions(aboutus.current.getBoundingClientRect());
     setContactDimensions(contacts.current.getBoundingClientRect());
-  }, [aboutus.current]);
-
-  // useLayoutEffect(() => {
-
-  // }, [contacts.current]);
+    setServiceDimensions(services.current.getBoundingClientRect());
+  }, [banner.current, services.current, aboutus.current);
 
   function listener() {
     let scrollpos = window.scrollY;
