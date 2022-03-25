@@ -20,10 +20,10 @@ const Feedback = () => {
 
     if (text === "" || email === "" || text === "") return;
     emailjs.send(
-      "gmail",
-      "template_x01PbqjJ",
+      "service_qi3nfb5",
+      "template_5uccncq",
       templateParams,
-      "user_gf6X8g8ypu0PGfyMRXOuf"
+      "user_2oVtAZArFSDKEkVPijQjw"
     );
     //   .then(
     //     response => {

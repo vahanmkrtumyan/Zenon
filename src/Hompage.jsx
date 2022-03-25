@@ -421,7 +421,10 @@ const Hompage = () => {
             </li>
             <li>
               <img src={Mail} alt="" />
+              <div>
               <p>info@zenonstroyinvest.am</p>
+              <p>z.stroyinvest@gmail.com</p>
+              </div>
             </li>
           </ul>
         </div>
