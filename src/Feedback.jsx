@@ -1,6 +1,5 @@
 // import PropTypes from "prop-types";
 import React, { useState } from "react";
-import { functions } from "./firebase";
 import * as emailjs from "emailjs-com";
 
 //import swal from "sweetalert";

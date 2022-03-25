@@ -4,7 +4,7 @@
 
     .top-footer-cols {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         flex-wrap: wrap;
 
         >div:not(:last-child) {

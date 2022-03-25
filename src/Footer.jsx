@@ -55,7 +55,7 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
-              <div>
+              {/* <div>
                 <h5>Партнеры</h5>
                 <ul>
                   <li>
@@ -77,7 +77,7 @@ const Footer = () => {
                     <p>Министерство промышленности и торговли РФ</p>
                   </li>
                 </ul>
-              </div>
+              </div> */}
             </div>
             <p className="text-center pt-20">
               © Zenon-stroyinvest, 2019. Все права защищены.

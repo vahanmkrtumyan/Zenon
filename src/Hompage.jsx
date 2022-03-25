@@ -79,9 +79,9 @@ const Hompage = () => {
   useLayoutEffect(() => {
     setBannerDimensions(banner.current.getBoundingClientRect());
     setAboutDimensions(aboutus.current.getBoundingClientRect());
-    setContactDimensions(contacts.current.getBoundingClientRect());
+    // setContactDimensions(contacts.current.getBoundingClientRect());
     setServiceDimensions(services.current.getBoundingClientRect());
-  }, [banner.current, services.current, aboutus.current);
+  }, [banner.current, services.current, aboutus.current]);
 
   function listener() {
     let scrollpos = window.scrollY;
@@ -288,12 +288,9 @@ const Hompage = () => {
                   внедрении передовых технологий и имеем давние партнерские
                   соглашения с российскими и западными производителями
                   оборудования, научно-исследовательскими организациями и
-                  испытательными центрами. В сложившихся на сегодняшний день ...
-                  политических условиях, мы осуществляем поиск, подбор и
-                  поставку аналогов зарубежного оборудования, находящегося под
-                  санкциями на ввоз в РФ.
+                  испытательными центрами. Мы осуществляем поиск, подбор и поставку зарубежного оборудования, в том числе запасных частей и комплектующих, транспортных средств, товаров широкого потребления.
                 </p>
-                <Collapse isOpened={isOpened}>
+                {/* <Collapse isOpened={isOpened}>
                   <div>
                     {" "}
                     Единый центр компетенций на базе ЗАО «ЗенонСтройИнвест» г.
@@ -314,7 +311,7 @@ const Hompage = () => {
                   onClick={() => setIsopened(!isOpened)}
                 >
                   далее
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
@@ -392,14 +389,9 @@ const Hompage = () => {
         </div>
       </section>
 
-      <section className="partners py-80" id="partner" ref={contacts}>
+      {/* <section className="partners py-80" id="partner" ref={contacts}>
         <div className="container">
           <h2 className="text-center uppercase color-text pb-30">Партнеры</h2>
-          {/* <p className="text-center">
-            Компания «ЗенонСтройИнвест» уделяет особое внимание контролю
-            качества выпускаемой продукции, имеем современную систему
-            менеджмента качества, постоянно внедряем
-          </p> */}
           <div className="partners-logos pt-50">
             {partnerImages.map(item => (
               <img key={item} src={require(`../src/img/${item}.png`)} />
@@ -407,7 +399,7 @@ const Hompage = () => {
           </div>
         </div>
         <p id="cont"></p>
-      </section>
+      </section> */}
 
       <section id="contact" className="contacts">
         <div className="contact-title">
