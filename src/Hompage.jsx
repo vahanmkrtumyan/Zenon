@@ -206,16 +206,16 @@ const Hompage = () => {
               onClick={() => setBurgerOpen(false)}
             >
               <li className={service} onClick={() => setClass("service")}>
-                <HashLink to="/Services/#top">услуги</HashLink>
+                <HashLink to="/Services/#top">services</HashLink>
               </li>
               <li className={about} onClick={() => setClass("about")}>
                 <a href="#about" onClick={navigateTo}>
-                  О компании
+                  about us
                 </a>
               </li>
               <li className={contact} onClick={() => setClass("contact")}>
                 <a onClick={navigateTo} href="#contact">
-                  Контакты
+                  Contacts
                 </a>
               </li>
             </ul>
@@ -224,11 +224,10 @@ const Hompage = () => {
       </header>
       <section className="banner home-banner" id="top" ref={banner}>
         <div className="content">
-          <h3 className="color-secondary">ПОЛНЫЙ СПЕКТР УСЛУГ ПО</h3>
-          <h1>ИМПОРТУ И ЭКСПОРТУ</h1>
+          <h3 className="color-secondary">FULL RANGE OF</h3>
+          <h1>IMPORT AND EXPORT SERVICES</h1>
           <p>
-            Один из лидеров рынка ЕАЭС по сорсингу и поставке огромного спектра
-            товаров
+          One of the market leaders in sourcing and supplying a huge range of goods
           </p>
         </div>
       </section>
@@ -237,7 +236,7 @@ const Hompage = () => {
         <HashLink to={`/Services/#top`}>
           {" "}
           <button className="btn with-img btn-lg primary service-btn">
-            услуги
+            SERVICES
             <img src={Arrow} alt="" />
           </button>
         </HashLink>
@@ -245,22 +244,22 @@ const Hompage = () => {
           <Slider {...settings}>
             <div className="service-card">
               <img src={Image1} alt="" />
-              <p>Проектно-конструкторские работы</p>
+              <p>Project design works</p>
             </div>
             <div className="service-card">
               <img src={Image2} alt="" />
-              <p>Изготовление оборудования по чертежам</p>
+              <p>Production of equipment according to drawings</p>
             </div>
             <div
               className="service-card"
               style={{ backgroundImage: `url(${Image3})` }}
             >
               <img src={Image3} alt="" />
-              <p>Поставка готового технологического оборудования</p>
+              <p>Supply of ready-made technological equipment</p>
             </div>
             <div className="service-card">
               <img src={Image4} alt="" />
-              <p>другие услуги</p>
+              <p>Other services</p>
             </div>
           </Slider>
         </div>
@@ -268,7 +267,7 @@ const Hompage = () => {
       <section id="abouts"></section>
       <section className="about-company" id="about" ref={aboutus}>
         <div className="container">
-          <h2 className="uppercase color-text">О компании</h2>
+          <h2 className="uppercase color-text">About company</h2>
           <div className="text-with-img img-right">
             <div
               className="section-img"
@@ -277,18 +276,15 @@ const Hompage = () => {
             <div className="section-text">
               <div className="section-text-content">
                 <p>
-                  Производственно-инжиниринговая компания «ЗенонСтройИнвест»
-                  занимается оказанием инжиниринговых услуг по подборке и
-                  поставке промышленного оборудования и промышленных изделий
-                  любой сложности для средних и крупных предприятий «под ключ»
-                  или на отдельные части полного технологического цикла
-                  производства, используемого в машиностроительной,
-                  нефтегазохимической отрасли и электроэнергетики.Мы
-                  специализируемся на решении сложных технических задач...
-                  внедрении передовых технологий и имеем давние партнерские
-                  соглашения с российскими и западными производителями
-                  оборудования, научно-исследовательскими организациями и
-                  испытательными центрами. Мы осуществляем поиск, подбор и поставку зарубежного оборудования, в том числе запасных частей и комплектующих, транспортных средств, товаров широкого потребления.
+                    The production and engineering company "ZenonStroyInvest" is engaged in the
+                   provision of engineering services for the selection and supply of industrial
+                    equipment and industrial products of any complexity for medium and large
+                     enterprises on a turnkey basis or for separate parts of the full technological cycle
+                      of production used in the engineering, petrochemical and power industries.
+                       We specialize in solving complex technical problems... introducing advanced technologies
+                        and have long-standing partnership agreements with domestic
+                         and foreign equipment manufacturers, research organizations and testing centers.
+                          We search, select and supply foreign equipment, including spare parts and components, vehicles and consumer goods.
                 </p>
                 {/* <Collapse isOpened={isOpened}>
                   <div>
@@ -321,7 +317,7 @@ const Hompage = () => {
 
       <section className="quality">
         <div className="container">
-          <h2 className="uppercase color-text">Качество и Сертификаты</h2>
+          <h2 className="uppercase color-text">Quality and Certificates</h2>
           <div className="text-with-img img-left">
             <div
               className="section-img"
@@ -339,6 +335,7 @@ const Hompage = () => {
                   гарантийное обслуживание. Производство имеет все необходимые
                   лицензии, разрешения, сертификаты:
                 </p>
+                {/*
                 <Collapse isOpened={isOpened2}>
                   <div>
                     <ul>
@@ -381,8 +378,8 @@ const Hompage = () => {
                   className="btn outline btn-sm mt-20"
                   onClick={() => setIsopened2(!isOpened2)}
                 >
-                  далее
-                </button>
+                  expand
+                </button>*/}
               </div>
             </div>
           </div>
@@ -403,9 +400,9 @@ const Hompage = () => {
 
       <section id="contact" className="contacts">
         <div className="contact-title">
-          <h2 className="text-center uppercase color-text pb-30">Контакты</h2>
+          <h2 className="text-center uppercase color-text pb-30">Contacts</h2>
           <h3 className="text-center">
-            Свяжитесь с нами, чтобы обсудить сотрудничество
+          Contact us to discuss cooperation
           </h3>
         </div>
 
@@ -413,11 +410,11 @@ const Hompage = () => {
           <ul>
             <li>
               <img src={Phone} alt="" />
-              <p>+374 11441014</p>
+              <p>+374 11 441 014</p>
             </li>
             <li>
               <img src={Location} alt="" />
-              <p>г. Ереван В. Вагаршян 12а</p>
+              <p>Yerevan, V. Vagharshyan St., 12a</p>
             </li>
             <li>
               <img src={Mail} alt="" />

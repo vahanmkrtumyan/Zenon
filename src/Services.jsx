@@ -9,6 +9,7 @@ import Photo2 from "./img/Photo22.jpg";
 import Photo3 from "./img/Photo33.jpg";
 import Logo from "./img/logo.png";
 import { HashLink } from "react-router-hash-link";
+import { ReactComponent as ReactLogo } from "./img/Zenon-Services-Opacity.svg";
 
 const Services = () => {
   const banner = useRef();
@@ -62,10 +63,10 @@ const Services = () => {
           <nav className="header-menu">
             <ul>
               <li>
-                <HashLink to="/#about">О компании</HashLink>
+                <HashLink to="/#about">About us</HashLink>
               </li>
               <li>
-                <HashLink to="/#cont">Контакты</HashLink>
+                <HashLink to="/#cont">Contacts</HashLink>
               </li>
             </ul>
           </nav>
@@ -73,7 +74,7 @@ const Services = () => {
       </header>
       <section className="banner services-banner" id="top" ref={banner}>
         <div className="content">
-          <h1 className="uppercase ">услуги</h1>
+          <h1 className="uppercase ">services</h1>
           <ServicesImage />
         </div>
       </section>
@@ -82,7 +83,7 @@ const Services = () => {
           <div className="text-with-img img-right">
             <div className="section-top">
               <div className="section-top-text">
-                <h3>Проектно-конструкторские работы</h3>
+                <h3>Project design works</h3>
                 <div className="gradient-bg"></div>
               </div>
               <div
@@ -93,22 +94,21 @@ const Services = () => {
             <div className="section-text">
               <div className="section-text-content">
                 <p>
-                  Компания «ЗенонСтройИнвест» оказывает проектно-конструкторские
-                  работы и услуги по техническому перевооружению производства.
-                  Выполняем проектирование предприятий на основе индивидуальных
-                  решений, определяемых назначением будущего сооружения. Мы
-                  предлагаем современные решения для Вашего предприятия. Также
-                  предлагаем услуги по проектированию и установке
-                  автоматизированных систем управления технологическими
-                  процессами и производством. Проводим комплексную автоматизацию
-                  или модернизацию Вашего оборудования. На базе нашего
-                  инжинирингового центра работает конструкторское бюро. Опытные
-                  специалисты помогут подготовить проект технологического
-                  оборудования в соответствии с Вашими требованиями. При
-                  разработке проекта наши специалисты учитывают индивидуальные
-                  особенности производства и требования заказчика. Мы подготовим
-                  документацию для сборки любых установок, включая
-                  технологические линии импортного производства.
+                  The company "ZenonStroyInvest" provides design work and
+                  services for the technical re-equipment of production. We
+                  carry out the design of enterprises based on individual
+                  solutions determined by the purpose of the future structure.
+                  We offer modern solutions for your company. We also offer
+                  services for the design and installation of automated process
+                  and production control systems. We carry out complex
+                  automation or modernization of your equipment. A design office
+                  operates on the basis of our engineering center. Experienced
+                  specialists will help to prepare the project of technological
+                  equipment in accordance with your requirements. When
+                  developing a project, our specialists take into account the
+                  individual features of production and customer requirements.
+                  We will prepare documentation for the assembly of any
+                  installations, including imported production lines.
                 </p>
                 {/* <button className="btn outline btn-sm mt-20">далее</button> */}
               </div>
@@ -122,7 +122,7 @@ const Services = () => {
           <div className="text-with-img img-left">
             <div className="section-top">
               <div className="section-top-text">
-                <h3>Изготовление оборудования по чертежам</h3>
+                <h3>Production of equipment according to drawings</h3>
                 <div className="gradient-bg"></div>
               </div>
               <div
@@ -133,17 +133,16 @@ const Services = () => {
             <div className="section-text">
               <div className="section-text-content">
                 <p>
-                  Компания «ЗенонСтройИнвест» занимается изготовлением
-                  технологического оборудования на заказ по чертежам Заказчика,
-                  а так же предоставлением услуг связанных с обработкой металлов
-                  на ведущих российских и европейских предприятиях с
-                  возможностью доставки готовых изделий по всей России. Мы имеем
-                  возможность изготовить изделие по документации или образцам
-                  наших Заказчиков. Наша компания располагает собственным
-                  современным оборудованием и мощной производственной базой,
-                  поэтому можем оперативно и своевременно изготавливать заказы
-                  по предоставленным чертежам вне зависимости от их сложности и
-                  объема.
+                  The ZenonStroyInvest company is engaged in the manufacture of
+                  technological equipment to order according to the drawings of
+                  the Customer, as well as the provision of services related to
+                  the processing of metals at leading enterprises with the
+                  possibility of delivering finished products. We have the
+                  opportunity to manufacture a product according to the
+                  documentation or samples of our customers. Our company has its
+                  own modern equipment and a powerful production base, so we can
+                  quickly and timely produce orders according to the provided
+                  drawings, regardless of their complexity and volume.
                 </p>
                 {/* <button className="btn outline btn-sm mt-20">далее</button> */}
               </div>
@@ -157,7 +156,7 @@ const Services = () => {
           <div className="text-with-img img-right">
             <div className="section-top">
               <div className="section-top-text">
-                <h3>Поставка готового технологического оборудования</h3>
+                <h3>SUPPLY OF FINISHED TECHNOLOGICAL EQUIPMENT</h3>
                 <div className="gradient-bg"></div>
               </div>
               <div
@@ -168,17 +167,18 @@ const Services = () => {
             <div className="section-text">
               <div className="section-text-content">
                 <p>
-                  Компания «ЗенонСтройИнвест» имеет многолетний опыт поставки
-                  сложного технологического оборудования для нефтегазохимической
-                  промышленности и электроэнергетики. Также накоплен большой
-                  опыт поставки нестандартного крупногабаритного промышленного
-                  оборудования в сложных транспортных габаритных размерах. Наши
-                  специалисты имеют большой опыт логистического и таможенного
-                  делопроизводства. По требованию Заказчика наша компания готова
-                  обеспечить передачу интеллектуальной собственности на
-                  технологию и сопутствующие СОФТ на поставляемое импортное
-                  оборудование.
+                  ZenonStroyInvest has many years of experience in supplying
+                  complex process equipment for the petrochemical industry and
+                  the electric power industry. We have also accumulated
+                  extensive experience in the supply of non-standard large-sized
+                  industrial equipment in complex transport dimensions. Our
+                  specialists have extensive experience in logistics and customs
+                  office work. At the request of the Customer, our company is
+                  ready to provide the transfer of intellectual property for
+                  technology and related SOFTWARE to the imported equipment
+                  supplied.
                 </p>
+                {/*
                 <Collapse isOpened={isOpened}>
                   <div>
                     {" "}
@@ -211,7 +211,7 @@ const Services = () => {
                   onClick={() => setIsopened(!isOpened)}
                 >
                   далее
-                </button>
+                </button>*/}
               </div>
             </div>
           </div>
@@ -219,19 +219,19 @@ const Services = () => {
       </section>
 
       <section className="other-services" id={"other"}>
-        <h3 className="text-center">другие услуги</h3>
+        <h3 className="text-center">Other services</h3>
         <div className="content">
           <ul>
-            <li>Металлообработка на станках с ЧПУ</li>
-            <li>Резка металла</li>
-            <li>Доработка и корректировка изделий</li>
-            <li>Термообработка</li>
+            <li>Metalworking on CNC machines</li>
+            <li>Metal cutting</li>
+            <li>Refinement and adjustment of products</li>
+            <li>Heat treatment</li>
           </ul>
           <ul>
-            <li>Штамповка</li>
-            <li>Шлифовка готовых изделий</li>
-            <li>Нанесение защитной пленки и покраска</li>
-            <li>Сварочные работы любой сложности</li>
+            <li>Stamping</li>
+            <li>Grinding finished products</li>
+            <li>Protective film application and painting</li>
+            <li>Welding works of any complexity</li>
           </ul>
         </div>
       </section>

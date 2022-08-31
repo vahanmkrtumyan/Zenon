@@ -14,8 +14,8 @@ const Feedback = () => {
     var templateParams = {
       from_name: name + "(" + email + ")",
       to_name: "vahanmkrtumyan@gmail.com",
-      subject: "Из сайта",
-      message_html: text
+      subject: "Website request",
+      message_html: text,
     };
 
     if (text === "" || email === "" || text === "") return;
@@ -48,17 +48,15 @@ const Feedback = () => {
 
   return (
     <div className="contact-form">
-      <p className="color-white text-center pb-30">
-        МЫ ОТВЕТИМ ВАМ В КРАТЧАЙШИЕ СРОКИ
-      </p>
+      <p className="color-white text-center pb-30">WE WILL ANSWER YOU ASAP</p>
       <form action="">
         <div className="form-inputs pb-25">
           <div>
             <input
               name="name"
               type="text"
-              placeholder="имя"
-              onChange={e => setName(e.target.value)}
+              placeholder="name"
+              onChange={(e) => setName(e.target.value)}
               value={name}
             />
           </div>
@@ -67,7 +65,7 @@ const Feedback = () => {
               name="email"
               type="text"
               placeholder="email"
-              onChange={e => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
               value={email}
             />
           </div>
@@ -77,14 +75,14 @@ const Feedback = () => {
           id=""
           cols="30"
           rows="10"
-          placeholder="письмо"
-          onChange={e => setText(e.target.value)}
+          placeholder="message"
+          onChange={(e) => setText(e.target.value)}
           value={text}
         />
 
         <div className="text-right pt-30">
-          <button className="btn  btn-sm primary" onClick={e => sendEmail(e)}>
-            послать
+          <button className="btn  btn-sm primary" onClick={(e) => sendEmail(e)}>
+            Send
           </button>
         </div>
       </form>

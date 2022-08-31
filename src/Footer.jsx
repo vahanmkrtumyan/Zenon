@@ -10,22 +10,22 @@ const Footer = () => {
           <div className="container">
             <div className="top-footer-cols">
               <div>
-                <h5>ПЛАТФОРМА</h5>
+                <h5>PLATFORM</h5>
                 <ul>
                   <li>
-                    <HashLink to="/Services/#top">Услуги</HashLink>
+                    <HashLink to="/Services/#top">Services</HashLink>
                   </li>
                   <li>
-                    <HashLink to="/#about">О компании</HashLink>
+                    <HashLink to="/#about">About us</HashLink>
                   </li>
-                  <li>
+                {/*  <li>
                     <HashLink to="/#partner">Партнеры</HashLink>
+                  </li>*/}
+                  <li>
+                    <HashLink to="/#quality">Quality and Certificates</HashLink>
                   </li>
                   <li>
-                    <HashLink to="/#quality">Качество и Сертификаты</HashLink>
-                  </li>
-                  <li>
-                    <HashLink to="/#cont">Контакты</HashLink>
+                    <HashLink to="/#cont">Contacts</HashLink>
                   </li>
                   {/* <li>
                     <a href="#">English</a>
@@ -33,25 +33,25 @@ const Footer = () => {
                 </ul>
               </div>
               <div>
-                <h5>Услуги</h5>
+                <h5>Services</h5>
                 <ul>
                   <li>
                     <HashLink to="/Services/#project">
-                      Проектно-конструкторские работы
+                    Project design works
                     </HashLink>
                   </li>
                   <li>
                     <HashLink to="/Services/#izg">
-                      Изготовление оборудования по чертежам
+                    Production of equipment according to drawings
                     </HashLink>
                   </li>
                   <li>
                     <HashLink to="/Services/#post">
-                      Поставка готового технологического оборудования
+                      Supply of ready-made technological equipment
                     </HashLink>
                   </li>
                   <li>
-                    <HashLink to="/Services#other">Другие услуги</HashLink>
+                    <HashLink to="/Services#other">Other services</HashLink>
                   </li>
                 </ul>
               </div>
@@ -80,7 +80,7 @@ const Footer = () => {
               </div> */}
             </div>
             <p className="text-center pt-20">
-              © Zenon-stroyinvest, 2019. Все права защищены.
+              © Zenon-stroyinvest, 2022. All rights reserved.
             </p>
           </div>
         </div>
