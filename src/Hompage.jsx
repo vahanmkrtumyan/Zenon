@@ -65,13 +65,13 @@ const Hompage = () => {
       // trying to use new API - https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo
       window.scroll({
         top: 0,
-        left: 0
+        left: 0,
       });
     } catch (error) {
       // just a fallback for older browsers
       window.scrollTo(0, 0);
     }
-    setTimeout(function() {
+    setTimeout(function () {
       setClass("1");
     }, 0);
   }, []);
@@ -137,9 +137,9 @@ const Hompage = () => {
     setBurgerOpen(!burgerOpen);
   };
 
-  const scrollToRef = pos => {
+  const scrollToRef = (pos) => {
     window.removeEventListener("scroll", listener, true);
-    setTimeout(function() {
+    setTimeout(function () {
       window.addEventListener("scroll", listener, true);
     }, 2000);
     document.getElementById(pos).scrollIntoView({ behavior: "smooth" });
@@ -160,8 +160,8 @@ const Hompage = () => {
           slidesToScroll: 3,
           infinite: true,
           dots: true,
-          arrows: false
-        }
+          arrows: false,
+        },
       },
       {
         breakpoint: 768,
@@ -169,18 +169,18 @@ const Hompage = () => {
           slidesToShow: 2,
           slidesToScroll: 2,
           initialSlide: 2,
-          arrows: false
-        }
+          arrows: false,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: false
-        }
-      }
-    ]
+          arrows: false,
+        },
+      },
+    ],
   };
 
   return (
@@ -227,7 +227,8 @@ const Hompage = () => {
           <h3 className="color-secondary">FULL RANGE OF</h3>
           <h1>IMPORT AND EXPORT SERVICES</h1>
           <p>
-          One of the market leaders in sourcing and supplying a huge range of goods
+            One of the market leaders in sourcing and supplying a huge range of
+            goods
           </p>
         </div>
       </section>
@@ -276,15 +277,19 @@ const Hompage = () => {
             <div className="section-text">
               <div className="section-text-content">
                 <p>
-                    The production and engineering company "ZenonStroyInvest" is engaged in the
-                   provision of engineering services for the selection and supply of industrial
-                    equipment and industrial products of any complexity for medium and large
-                     enterprises on a turnkey basis or for separate parts of the full technological cycle
-                      of production used in the engineering, petrochemical and power industries.
-                       We specialize in solving complex technical problems... introducing advanced technologies
-                        and have long-standing partnership agreements with domestic
-                         and foreign equipment manufacturers, research organizations and testing centers.
-                          We search, select and supply foreign equipment, including spare parts and components, vehicles and consumer goods.
+                  The production and engineering company "ZenonStroyInvest" is
+                  engaged in the provision of engineering services for the
+                  selection and supply of industrial equipment and industrial
+                  products of any complexity for medium and large enterprises on
+                  a turnkey basis or for separate parts of the full
+                  technological cycle of production used in the engineering,
+                  petrochemical and power industries. We specialize in solving
+                  complex technical problems... introducing advanced
+                  technologies and have long-standing partnership agreements
+                  with domestic and foreign equipment manufacturers, research
+                  organizations and testing centers. We search, select and
+                  supply foreign equipment, including spare parts and
+                  components, vehicles and consumer goods.
                 </p>
                 {/* <Collapse isOpened={isOpened}>
                   <div>
@@ -326,14 +331,13 @@ const Hompage = () => {
             <div className="section-text">
               <div className="section-text-content">
                 <p>
-                  Компания «ЗенонСтройИнвест» уделяет особое внимание контролю
-                  качества выпускаемой продукции, имеем современную систему
-                  менеджмента качества, постоянно внедряем новые стандарты и
-                  программы контроля качества, повышаем уровень квалификации
-                  сотрудников. На всю продукцию предоставляется гарантийный
-                  срок, по истечении которого наш сервисный центр выполняет пост
-                  гарантийное обслуживание. Производство имеет все необходимые
-                  лицензии, разрешения, сертификаты:
+                  ZenonStroyInvest pays special attention to the quality control
+                  of its products. We have a modern quality management system,
+                  constantly introduce new standards and quality control
+                  programs, and improve the skills of our employees. All
+                  products are provided with a warranty period, after which our
+                  service center performs post-warranty service. The production
+                  has all the necessary licenses, permits, certificates:
                 </p>
                 {/*
                 <Collapse isOpened={isOpened2}>
@@ -401,9 +405,7 @@ const Hompage = () => {
       <section id="contact" className="contacts">
         <div className="contact-title">
           <h2 className="text-center uppercase color-text pb-30">Contacts</h2>
-          <h3 className="text-center">
-          Contact us to discuss cooperation
-          </h3>
+          <h3 className="text-center">Contact us to discuss cooperation</h3>
         </div>
 
         <div className="contact-social">
@@ -419,8 +421,8 @@ const Hompage = () => {
             <li>
               <img src={Mail} alt="" />
               <div>
-              <p>info@zenonstroyinvest.am</p>
-              <p>z.stroyinvest@gmail.com</p>
+                <p>info@zenonstroyinvest.am</p>
+                <p>z.stroyinvest@gmail.com</p>
               </div>
             </li>
           </ul>
