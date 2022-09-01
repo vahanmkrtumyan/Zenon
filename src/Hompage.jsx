@@ -337,7 +337,7 @@ const Hompage = () => {
                   programs, and improve the skills of our employees. All
                   products are provided with a warranty period, after which our
                   service center performs post-warranty service. The production
-                  has all the necessary licenses, permits, certificates:
+                  has all the necessary licenses, permits, certificates.
                 </p>
                 {/*
                 <Collapse isOpened={isOpened2}>
